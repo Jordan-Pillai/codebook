@@ -13,6 +13,7 @@
     "axios": "^0.27.2",
     "cra-template-typescript": "^1.2.0",
     "esbuild-wasm": "^0.8.27",
+    "localforage": "^1.10.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "^5.0.1",
