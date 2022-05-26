@@ -1,15 +1,17 @@
+import "bulmaswatch/superhero/bulmaswatch.min.css";
 import * as esbuild from "esbuild-wasm";
 import { useEffect, useState, useRef } from "react";
 import { createRoot } from "react-dom/client";
 import { unpkgPathPlugin } from "./plugins/unpkg-path-plugin";
 import { fetchPlugin } from "./plugins/fetch-plugin";
+import CodeEditor from "./components/code-editor";
 
 const container = document.getElementById("root");
 
 const App = () => {
   const ref = useRef<any>();
   const iframe = useRef<any>();
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState<string | undefined>("");
 
   const startService = async () => {
     ref.current = await esbuild.startService({
@@ -65,6 +67,10 @@ const App = () => {
 
   return (
     <div>
+      <CodeEditor
+        initalValue="const a = 1"
+        onChange={(value) => setInput(value)}
+      />
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
