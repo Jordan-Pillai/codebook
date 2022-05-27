@@ -31,6 +31,7 @@ export default async (rawCode: string | undefined) => {
   } catch (err) {
     return {
       code: "",
+      // @ts-ignore
       err: err.message,
     };
   }
